@@ -1,0 +1,6 @@
+.env
+data/
+miscellaneous/
+qdrant_storage/
+__pycache__/
+.DS_Store

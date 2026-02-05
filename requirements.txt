@@ -1,0 +1,11 @@
+beautifulsoup4
+feedparser
+openai
+pandas
+playwright
+python-dateutil
+python-dotenv
+pytz
+qdrant-client
+streamlit
+tqdm
