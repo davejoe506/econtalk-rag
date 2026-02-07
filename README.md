@@ -152,7 +152,7 @@ streamlit run rag_app.py
 * **Hybrid Search:** Implement Qdrant's sparse vectors (BM25) alongside dense vectors. This would allow the system to match specific keywords (e.g., "Coase Theorem") even if the semantic meaning is slightly off.
 * **Automated Cron Job:** Create a GitHub Action or Airflow DAG to run '01_fetch_feed.py'weekly, identify new episodes, and run the pipeline only for those new files.
 * **Audio RAG:** Use OpenAI's Whisper model to re-transcribe the oldest episodes for better accuracy and timestamping.
-* **Open Source Models*:** Experiment with running the embedding and chat steps locally using Ollama (Llama 3 or Mistral) to remove API costs and increase privacy.
+* **Open Source Models:** Experiment with running the embedding and chat steps locally using Ollama (Llama 3 or Mistral) to remove API costs and increase privacy.
 
 ---
 
