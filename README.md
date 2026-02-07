@@ -70,7 +70,7 @@ econtalk-rag/
 * Docker Desktop (for running Qdrant)
 * OpenAI API Key
 
-2. **Environment Setup**
+2. **Environment Setup**<br/>
 Clone the repo and create a virtual environment:
 
 ```bash
@@ -81,21 +81,21 @@ python -m venv venv
 source venv/bin/activate
 ```
 
-Install dependencies:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 playwright install
 ```
 
-3. **Configuration**
+3. **Configuration**  
 Create a .env file in the root directory:
 
 ```
 OPENAI_API_KEY=sk-proj-your-key-here
 ```
 
-4. **Start the Database**
+4. **Start the Database**  
 Launch Qdrant using Docker:
 
 ```bash
