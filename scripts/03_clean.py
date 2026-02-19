@@ -122,7 +122,7 @@ def process_file(file_path):
     except:
         return
 
-    # --- 1. Identify era ---
+    # 1. Identify era
     date_obj = parse_date(raw_data.get("date"))
     if not date_obj or date_obj < ERA_START_DATE:
         return 
@@ -130,13 +130,13 @@ def process_file(file_path):
     raw_text = raw_data.get("content", "")
     lines = raw_text.split('\n') if isinstance(raw_text, str) else []
 
-    # --- 2. Select strategy ---
+    # 2. Select strategy
     if date_obj < ERA_NEW_FORMAT_DATE:
         cleaned_dialogue = clean_transcript_old_era(lines)
     else:
         cleaned_dialogue = clean_transcript_new_era(lines)
 
-    # --- 3. Extract guest name ---
+    # 3. Extract guest name
     raw_title = raw_data.get("title", "")
     clean_title = raw_title.replace(" - Econlib", "").strip()
     guest_name = "Unknown"
@@ -146,7 +146,7 @@ def process_file(file_path):
     elif " on " in clean_title:
         guest_name = clean_title.split(" on ")[0].strip()
     
-    # --- 4. Standardize speaker names ---
+    # 4. Standardize speaker names
     for turn in cleaned_dialogue:
         speaker = turn['speaker']
         
@@ -158,7 +158,7 @@ def process_file(file_path):
         elif speaker in ["Russ", "Roberts"]:
             turn['speaker'] = "Russ Roberts"
 
-    # --- 5. Save ---
+    # 5. Save
     clean_data = {
         "meta": {
             "title": clean_title,

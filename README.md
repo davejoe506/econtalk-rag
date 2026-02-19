@@ -23,6 +23,8 @@ EconTalk, hosted by Russ Roberts, has been running weekly since 2006. With over 
 
 This project scrapes the entire archive, chunks the transcripts into semantic vectors, and stores them in a Vector Database (Qdrant). When a user asks a question, the system retrieves the most relevant segments and feeds them to GPT-4 to generate an answer based *only* on the text provided.
 
+---
+
 ## Tech Stack
 * **Language:** Python 3.10+
 * **Data Pipeline:** Pandas, BeautifulSoup, Playwright (Scraping)
@@ -55,10 +57,10 @@ econtalk-rag/
 │   ├── 04_chunk.py         # Chunking: split text with overlap
 │   ├── 05_embed.py         # Embedding: generate vectors via OpenAI
 │   ├── 06_load_db.py       # Loading: incorporate into Qdrant
-│   └── run_pipeline.py     # Master script to run all steps
 │
 ├── app.py                  # Web interface (Streamlit)
-└── rag_app.py              # CLI interface
+├── rag_app.py              # CLI interface
+└── run_pipeline.py         # Master script to run all steps
 ```
 
 ---
@@ -74,7 +76,7 @@ econtalk-rag/
 Clone the repo and create a virtual environment:
 
 ```bash
-git clone [https://github.com/yourusername/econtalk-rag.git](https://github.com/yourusername/econtalk-rag.git)
+git clone [https://github.com/davejoe506/econtalk-rag.git](https://github.com/davejoe506/econtalk-rag.git)
 cd econtalk-rag
 
 python -m venv venv
@@ -114,12 +116,12 @@ python scripts/run_pipeline.py
 ```
 
 Or run the individual steps manually:
-1. **Inventory:** 'python scripts/01_fetch_feed.py'
-2. **Scrape:** 'python scripts/02_scrape.py'
-3. **Clean:** 'python scripts/03_clean.py'
-4. **Chunk:** 'python scripts/04_chunk.py'
-5. **Embed:** 'python scripts/05_embed.py' (Note: Incurs OpenAI API costs)
-6. **Load:** 'python scripts/06_load_db.py'
+1. **Inventory:** `python scripts/01_fetch_feed.py`
+2. **Scrape:** `python scripts/02_scrape.py`
+3. **Clean:** `python scripts/03_clean.py`
+4. **Chunk:** `python scripts/04_chunk.py`
+5. **Embed:** `python scripts/05_embed.py` (Note: incurs OpenAI API costs)
+6. **Load:** `python scripts/06_load_db.py`
 
 ---
 
